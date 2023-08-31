@@ -32,7 +32,8 @@ raw_data <- read_csv("raw_data/data.csv")
 ```{r}
 ggplot(raw_data) +
   theme_classic() +
-  geom_boxplot(aes(Sex, NumLimbsMissing)) +
+  theme(plot.title.position = "plot") +
+  geom_boxplot(aes(Sex, VO2_ml_per_h)) +
   scale_x_discrete(labels = c("Female", "Male")) +
-  labs(x = "Sex", y = "Number of limbs missing", title = "Males have lost more limbs on average than females")
+  labs(x = "Sex", y = "Metabolic rate (ml oxygen consumed per h)", title = "Female animals on average have higher metabolic rates than\nmale animals")
 ```
