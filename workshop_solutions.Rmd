@@ -16,6 +16,23 @@ output:
 
 # Bonus section
 
+```{r}
+# load packages
+library(tidyverse)
+```
+
 ## Loading the data
 
+```{r}
+raw_data <- read_csv("raw_data/data.csv")
+```
+
 ## An interesting plot
+
+```{r}
+ggplot(raw_data) +
+  theme_classic() +
+  geom_boxplot(aes(Sex, NumLimbsMissing)) +
+  scale_x_discrete(labels = c("Female", "Male")) +
+  labs(x = "Sex", y = "Number of limbs missing", title = "Males have lost more limbs on average than females")
+```
